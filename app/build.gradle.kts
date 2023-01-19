@@ -10,9 +10,9 @@ android {
     defaultConfig {
         applicationId = "com.app"
         minSdk = 21
-        targetSdk=  33
-        versionCode= 1_00_00
-        versionName ="1.00.00"
+        targetSdk = 33
+        versionCode = 1_00_00
+        versionName = "1.00.00"
     }
 
     buildTypes {
