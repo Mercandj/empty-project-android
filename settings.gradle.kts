@@ -10,6 +10,6 @@ pluginManagement {
         // [v1] https://android-developers.googleblog.com/2021/09/accelerated-kotlin-build-times-with.html
         // [SupportedLib] https://kotlinlang.org/docs/ksp-overview.html#supported-libraries
         // [GitHub] https://github.com/google/ksp
-        id("com.google.devtools.ksp") version "1.8.0-1.0.8"
+        id("com.google.devtools.ksp") version "1.8.20-1.0.10"
     }
 }
