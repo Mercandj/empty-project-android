@@ -1,12 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-
-    // [Announce] https://android-developers.googleblog.com/2021/02/announcing-kotlin-symbol-processing-ksp.html
-    // [v1] https://android-developers.googleblog.com/2021/09/accelerated-kotlin-build-times-with.html
-    // [SupportedLib] https://kotlinlang.org/docs/ksp-overview.html#supported-libraries
-    // [GitHub] https://github.com/google/ksp
-    id("com.google.devtools.ksp")
+    kotlin("kapt")
 }
 
 android {
@@ -19,6 +14,8 @@ android {
         targetSdk = 33
         versionCode = 1_00_00
         versionName = "1.00.00"
+        // For Room database testing
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -53,7 +50,15 @@ dependencies {
 
     // AndroidX - Room
     implementation("androidx.room:room-runtime:2.5.0")
-    ksp("androidx.room:room-compiler:2.5.0")
+    implementation("androidx.room:room-ktx:2.5.0")
+    kapt("androidx.room:room-compiler:2.5.0")
+
+    // Room Test
+    testImplementation ("junit:junit:4.13.2")
+    androidTestImplementation ("androidx.test.ext:junit:1.1.3")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation ("com.google.truth:truth:1.0.1")
+    androidTestImplementation ("android.arch.core:core-testing:1.0.0")
 
     // JetPack Compose
     // https://developer.android.com/jetpack/androidx/releases/compose-kotlin#pre-release_kotlin_compatibility
